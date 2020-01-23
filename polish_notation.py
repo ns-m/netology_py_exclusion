@@ -1,13 +1,14 @@
-from exceptions_class import Exceptions
+from exceptions_class import PolishCalculator
+
+calculations  = PolishCalculator(input("Введите оператор : "), input("Введите операнд №1 : "), input("Введите операнд №2 : "))
 
 while True:
-    Exceptions()
-    Exceptions().exceptions_operators()
-    #Exceptions().exceptions_operands()
 
-    if Exceptions().operation():
-        print(f'Выражение:  {Exceptions().operators} {Exceptions().operand1} {Exceptions().operand2} = {Exceptions().operation()}')
+    calculations.validate_operators()
+
+    if calculations.operation():
+        print(f'Выражение:  {calculations.operators} {calculations.operand1} {calculations.operand2} = {calculations.operation()}')
     else:
-        print(Exceptions().exceptions_operands())
+        print(calculations.validate_operands())
     break
 
